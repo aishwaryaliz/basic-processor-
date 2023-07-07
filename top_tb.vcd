@@ -1,0 +1,70 @@
+$date
+	Wed Jun 14 12:53:35 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module top_tb $end
+$var integer 32 ! i [31:0] $end
+$scope module dut $end
+$var reg 32 " IR [31:0] $end
+$var reg 16 # SGPR [15:0] $end
+$var reg 1 $ carry $end
+$var reg 32 % mul_res [31:0] $end
+$var reg 1 & overflow $end
+$var reg 1 ' sign $end
+$var reg 17 ( temp_sum [16:0] $end
+$var reg 1 ) zero $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0)
+b110 (
+0'
+0&
+bx %
+0$
+bx #
+b10000000001010000000000000100 "
+b100000 !
+$end
+#10000
+b100 (
+b10000000010000010100000000000 "
+#20000
+b1001000000010000000000110111 "
+#30000
+b1001000011100000000000000000 "
+#40000
+1)
+b110001000011110000000000111000 "
+#50000
+0)
+b111001000011110000000000111000 "
+#60000
+1)
+b0 (
+b10000100000000000100000000000 "
+#70000
+0)
+b1000000000000000 (
+1'
+b10000100000000000100000000000 "
+#80000
+1&
+1$
+b10000000000000010 (
+0'
+b10000100000000000100000000000 "
+#90000
+0&
+0$
+b1000000000000000 (
+1'
+b10000100000000000100000000000 "
+#100000
