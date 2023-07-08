@@ -1,0 +1,16 @@
+This model contains a 32-bit Instruction Register following the given structure:
+BITS       
+31-27    Operation Type
+26-22    Destination Register
+21-17    Source Register (1)
+16       Mode Selection (Register (0)/ Immediate (1))
+For Mode 0:                         For Mode 1:
+15-11    Source Register (2)        15-0    Immediate Data
+10-0     Unused
+
+The instructions are provided in a binary format in an external text file inst_mem.mem.
+
+The processor supports register, immediate, direct and indirect addressing modes. 
+The 6 bits in the IR allow 32 possible types of operation of which 25 (5 arithmetic, 7 logical, 4 memory transfer and 9 jump) operations have been provided.
+Similarly, there are 32 possible general purpose registers that can act as source or destination registers.
+The 16 bits provided for Immediate Data acts as an address in direct addressing mode, data in immediate addressing mode and address of data memory in case of data transfer. 
