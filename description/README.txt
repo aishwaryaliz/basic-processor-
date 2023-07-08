@@ -14,3 +14,5 @@ The IR gives information on the type of operation to be performed on the data an
 
 The processor is built following the Harvard Architecture with seperate buses for data memory and instruction memory. 
 The array format for memory addressing has been used.
+
+The details of IR, the ALU, flags, architecture and memory model have been provided in the 'specs' file.
