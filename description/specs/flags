@@ -1,0 +1,41 @@
+The processor has 4 flags:
+Sign
+Zero
+Carry
+Overflow
+
+The Sign flag is set when the MSB of the data in the destination register is 1.
+The Zero flag is set when all 16 bits (or 32 in case of MUL) in the destination register are 0.
+The Carry flag is set when there is a carry after ADD operation.
+The Overflow flag is set after ADD or SUB operation when there is an error in the sign. 
+
+The truth table for the overflow flag is as follows:
+ADD
+i/p1  i/p2  res  ov
+>0    >0    >0   0
+>0    >0    <0   1
+-------------------
+>0    <0    >0   0
+>0    <0    <0   0
+-------------------
+<0    >0    >0   0
+<0    >0    <0   0
+-------------------
+<0    <0    >0   1
+<0    <0    <0   0
+
+SUB
+i/p1  i/p2  res  ov
+>0    >0    >0   0
+>0    >0    <0   0
+-------------------
+>0    <0    >0   0
+>0    <0    <0   1
+-------------------
+<0    >0    >0   1
+<0    >0    <0   0
+-------------------
+<0    <0    >0   0
+<0    <0    <0   0
+
+The jumping and branching instructions are based on the condition of these flags.
