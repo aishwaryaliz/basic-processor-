@@ -1,0 +1,14 @@
+The processor follows the Harvard Architecture with separate data and instruction memory spaces. 
+Each of them contains 16 elements of a 32-bit memory space.
+
+DATA MEMORY
+It allows the internal transfer of data between GPRs and data memory.
+It also allows the transfer of data from the external world into the data memory via the din and dout buses.
+The din and dout buses are 16 bits each.
+The address in data memory is specified by the 0-16 bits in the IR (immediate data).
+
+PROGRAM MEMORY
+The instructions provided in binary format in the inst_mem.mem file are transfered to the array for program memory. 
+Each instruction is executed after a delay of 4 clock ticks one after the other. 
+The Program Counter (PC) is used to keep a track of the instruction getting executed. 
+The PC always points to the next instruction similar the PC of an x86 processor.
