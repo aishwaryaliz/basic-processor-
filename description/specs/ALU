@@ -1,0 +1,21 @@
+The processor allows the following operations:
+
+ARITHMETIC:
+movsgpr rdst; 
+mov rdst, rsrc;
+add rdst, rsrc1, rsrc2;
+sub dst, rsrc1, rsrc2;
+mul dst, rsrc1, rsrc2;
+
+All the GPRs have been considered to be 16-bit registers.
+The SGPR is a special GPR used to store the MSB 16 bits after a mul operation.
+
+LOGICAL:
+or rdst, rsrc1, rsrc2;
+and rdst, rsrc1, rsrc2;
+xor rdst, rsrc1, rsrc2;
+xnor rdst, rsrc1, rsrc2;
+nand rdst, rsrc1, rsrc2;
+nor rdst, rsrc1, rsrc2;
+not rdst, rsrc1;
+
