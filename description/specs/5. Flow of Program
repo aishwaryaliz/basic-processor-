@@ -1,0 +1,38 @@
+The flowchart of the program is as follows:
+
+Start --> IDLE --> Fetch Instruction --> Decode and Execute Instruction --> Standard Delay --> Next Instruction --> Sense Halt -->
+
+The flow of the program is controlled using an FSM. 
+
+A reset option is provided. 
+When enabled, IR = 0 and PC = 0. The system enters the IDLE state. 
+
+After the IDLE state, if reset = 0, the system fetches the instruction.
+This is done by loading the binary code in program memory pointed by the PC into the IR. 
+
+Thereafter, the instruction is decoded and executed by calling two functions- decode_inst() and decode_condflag().
+The arithmetic/ logical/ memory transfer operation is performed, and flags are updated. 
+
+A standard delay of four clock ticks is incorporated before reading the next instruction.
+This minimises the possibility of an error. 
+
+The next instruction is read on the basis of the status of the flags. 
+The program provides 9 jump instructions:
+1. Unconditional Jump
+2. JC
+3. JNC
+4. JL (jump if the sign flag is set)
+5. JGE (jump if the sign flag is not set)
+6. JZ
+7. JNZ
+8. Jump if there is overflow
+9. Jump if there is no overflow
+If any jump instruction is valid, the jump flag is set.
+The control is transferred to the address mentioned in the last 16 bits of the IR (immediate data).
+If the jump flag is not set, the PC is incremented and control is transferred to the next instruction.
+
+A halt state is present to check if the user wants the system to temporarily halt. 
+This is done by setting the stop bit.
+The system can exit from this state only using reset. 
+
+The FSM controls the transfer to next states. 
